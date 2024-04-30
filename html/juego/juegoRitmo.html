@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/juego/estiloJuegoRitmoEstilo.css">
+    <title>Juego Ritmo</title>
+</head>
+
+<body>
+    <audio class="musica" src="../../musica/juego/cha-cha-slide.mp3"></audio>
+
+    <main>
+        <div class="juego"> <!--JUEGO MENU-->
+            <div class="dar">
+                <div class="dar-combo"></div>
+                <div class="dar-punteria"></div>
+            </div>
+
+            <div class="contenedor"></div>
+
+            <div class="llave-contenedor">
+                <div class="llave llave-a llave-azul">
+                    <div class="llaveApretado llaveApretado-azul"></div>
+                    <span>A</span>
+                </div>
+                <div class="llave llave-s llave-rojo">
+                    <div class="llaveApretado llaveApretado-rojo"></div>
+                    <span>S</span>
+                </div>
+                <div class="llave llave-d llave-azul">
+                    <div class="llaveApretado llaveApretado-azul"></div>
+                    <span>D</span>
+                </div>
+                <div class="llave llave-espacio llave-naranja">
+                    <div class="llaveApretado llaveApretado-naranja"></div>
+                    <span>SPACE</span>
+                </div>
+                <div class="llave llave-j llave-azul">
+                    <div class="llaveApretado llaveApretado-azul"></div>
+                    <span>J</span>
+                </div>
+                <div class="llave llave-k llave-rojo">
+                    <div class="llaveApretado llaveApretado-rojo"></div>
+                    <span>K</span>
+                </div>
+                <div class="llave llave-l llave-azul">
+                    <div class="llaveApretado llaveApretado-azul"></div>
+                    <span>L</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu"> <!--MAIN MENU-->
+            <div>
+                <h1>BIENVENIDO</h1>
+                <p>
+                    Este es un juego de ritmo, nada mas, nada menos. O eso crees.....
+                </p>
+            </div>
+
+            <div class="chibi-start">
+                <img src="../../img/juego/Hakeem-Standing-Prof-Happy.png" width="400px" height="400px" alt="Chibi Welcome">
+            </div>
+
+            <div class="menuStart">
+                <a class="btn" href="#">EMPEZAR</a>
+                <a class="btn" href="../../html/paginaPrincipal/paginaPrincipal.html">MENU</a>
+            </div>
+        </div>
+
+        <div class="score"> <!--SCORE MENU-->
+            <div class="tiempo"></div>
+            <div class="animation">
+                <video id="myVideo" muted playsinline width="1280" height="720" controls>
+                    <source src="../../img//juego/final-animation.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="resultado">
+                <h2>RESULTADO FINAL</h2>
+                <div class="resultado-punteria perfecto">
+                    <p class="punteria">Perfecto</p>
+                    <span>:</span>
+                    <p class="punteria-cantidad perfecto-cantidad"></p>
+                </div>
+                <div class="resultado-punteria bueno">
+                    <p class="punteria">Bueno</p>
+                    <span>:</span>
+                    <p class="punteria-cantidad bueno-cantidad"></p>
+                </div>
+                <div class="resultado-punteria malo">
+                    <p class="punteria">Malo</p>
+                    <span>:</span>
+                    <p class="punteria-cantidad malo-cantidad"></p>
+                </div>
+                <div class="resultado-punteria fallo">
+                    <p class="punteria">Fallo</p>
+                    <span>:</span>
+                    <p class="punteria-cantidad fallo-cantidad"></p>
+                </div>
+                <div class="resultado-punteria combo">
+                    <p class="punteria">Max Combo</p>
+                    <span>:</span>
+                    <p class="punteria-cantidad combo-cantidad"></p>
+                </div>
+                <div class="resultado-punteria puntuacion">
+                    <p class="punteria">Score</p>
+                    <span>:</span>
+                    <p class="punteria-cantidad puntuacion-cantidad"></p>
+                </div>
+                <div class="chibi-start">
+                    <img src="../../img/juego/Hakeem-Sitting-Confused.png" width="500px" height="500px" alt="Chibi Goodbye">
+                </div>
+            </div>
+        </div>
+        <div class="nextLevel">
+            <a class="btn" href="https://www.youtube.com/watch?v=q-Y0bnx6Ndw">RESET LEVEL</a>
+        </div>
+    </main>
+
+    <script src="../../js/juego/juegoRitmojs.js"></script>
+    <script src="../../js/juego/cancion.js"></script>
+</body>
+
+</html>

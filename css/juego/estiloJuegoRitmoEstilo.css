@@ -1,0 +1,345 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --background :linear-gradient(to top, rgb(25, 209, 233), rgba(255, 172, 17, 0.8));
+    --color-perfecto: rgba(84, 247, 20, 1);
+    --color-bueno: rgb(218, 221, 25);
+    --color-malo: rgb(224, 33, 33);
+    --color-fallo: rgb(134, 134, 134);
+    --maxcombo-color: rgba(0, 110, 255, .8);
+    --score-color: rgba(240, 202, 36, .8);
+    --hit-color: rgba(255, 255, 255, .8);
+    --key-red: rgb(250, 3, 3);
+    --key-blue: rgb(46, 131, 228);
+    --key-orange: rgba(240, 128, 60, 1);
+    --keypress-red: linear-gradient(to top, rgba(254, 45, 87, .6), rgba(254, 45, 87, 0));
+    --keypress-blue: linear-gradient(to top, rgba(28, 121, 228, .6), rgba(28, 121, 228, 0));
+    --keypress-orange: linear-gradient(to top, rgba(240, 128, 60, .6), rgba(240, 128, 60, 0));
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: var(--background);
+}
+
+main{
+    height: 100vh;
+    width: 90vw;
+    display: flex;
+}
+
+h2{
+    padding: 1rem;
+}
+
+.juego{
+    position: relative;
+    display: flex;
+    flex: 0 0 calc(100%/2); /*Separar el juego del menu y resultado final gracias a la clase padre main*/
+    flex-direction: column;
+    background: rgb(0, 0, 0);
+    max-width: 35rem;
+    margin: 0 auto;
+}
+
+.dar{
+    position: absolute;
+    width: 50%;
+    height: 20%;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.dar-combo{
+    width: 100%;
+    height: 50%;
+    font-size: 7rem;
+    color: rgba(255,199,126,0.8);
+}
+
+.dar-punteria{
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    font-size: 4rem;
+}
+
+.dar-punteria--perfecto{
+    color: var(--color-perfecto);
+    opacity: 0;
+    animation: fade 1s;
+}
+
+.dar-punteria--bueno{
+    color: var(--color-bueno);
+    opacity: 0;
+    animation: fade 1s;
+}
+
+.dar-punteria--malo{
+    color: var(--color-malo);
+    opacity: 0;
+    animation: fade 1s;
+}
+
+.dar-punteria--fallo{
+    color: var(--color-fallo);
+    opacity: 0;
+    animation: fade 1s;
+}
+
+.contenedor{
+    display: flex;
+    flex:1 0 auto;
+}
+
+.track{
+    position: relative;
+    flex: 0 0 calc(100%/7);
+}
+
+.track:not(:last-child){
+    border-right: 1px solid white;
+}
+
+.llave-contenedor{
+    display: flex;
+    flex:0 0 15%;
+}
+
+.llave{
+    flex: 0 0 calc(100%/7);
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    text-align: center;
+    position: relative;
+    font-weight: 1.6rem;
+}
+
+.llave-azul{
+    background: var(--key-blue);
+}
+
+.llave-naranja{
+    background: var(--key-orange);
+}
+
+.llave-rojo{
+    background: var(--key-red);
+}
+
+.llave span{
+    font-weight: bold;
+    writing-mode:vertical-lr;
+    text-orientation:upright;
+    padding-top: 0.7rem;
+}
+
+.nota {
+    position: absolute;
+    width: 100%;
+    height: 1.5rem;
+    top: -1.5rem;
+  }  
+
+.llaveApretado{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    display: none;
+}
+
+.llave_dar {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: 0 0;
+    background: var(--hit-color);
+    opacity: 0;
+    border-radius: 50%;
+    animation: scaleFade 1s;
+  }
+
+.llaveApretado-azul{
+    background-image: var(--keypress-blue);
+}
+
+.llaveApretado-naranja{
+    background-image: var(--keypress-orange);
+}
+
+.llaveApretado-rojo{
+    background-image: var(--keypress-red);
+}
+
+.menu{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 calc(100%/2);
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    justify-content: space-around;
+    transition: all 1s;
+}
+
+.chibi-start{
+    position: absolute;
+    top: 30%;
+    left: 26%;
+}
+
+.nextLevel{
+    position: absolute;
+    top: 20%;
+    left: 65%;
+    opacity: 0;
+}
+
+.btn{
+    display: inline-block;
+    background-color: aquamarine;
+    border: 2px solid black;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    padding: 20px;
+    margin: 0 auto;
+    color: white; 
+    transition: all .2s;
+}
+
+.btn:hover{
+    background-color: white;
+    font-size: 2rem;
+    color: black
+}
+
+.score{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    color: white;
+    text-align: center;
+    z-index: -100;
+}
+
+.tiempo{
+    position: absolute;
+    top:50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    font-size: 6rem;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.animation{
+    position: absolute;
+    top:50%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    font-size: 6rem;
+    z-index: -100;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.resultado{
+    position: absolute;
+    background-color: rgb(34, 34, 34);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    top: 50%;
+    left: 40%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    opacity: 0;
+    transition: all 2s;
+}
+
+h2{
+    color: aliceblue;
+    font-size: 4rem;
+    padding: 2rem;
+}
+
+.resultado-punteria{
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.5rem;
+    padding: .5rem;
+}
+
+.punteria-cantidad{
+    flex: 0 0 45%;
+    text-align: right;
+}
+
+.perfecto{
+    color: var(--color-perfecto);
+}
+
+.bueno{
+    color: var(--color-bueno);
+}
+
+.malo{
+    color: var(--color-malo);
+}
+
+.fallo{
+    color: var(--color-fallo);
+}
+
+.combo{
+    color: var(--maxcombo-color);
+}
+
+.score{
+    color: var(--score-color);
+}
+
+@keyframes fade{
+    10%{opacity: 1;}
+    100%{opacity: 0;}
+}
+
+@keyframes moveDown {
+    0% { top: -1.5rem; }
+    98% { top: 100%; opacity: 1; }
+    100% { top: 105%; opacity: 0; }
+  }
+
+@keyframes scaleFade {
+    0% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+      width: 4rem;
+      height: 4rem;
+    }
+  }

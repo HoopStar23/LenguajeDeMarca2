@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/paginaPrincipal/estiloPaginaPrincipal.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="../../js/paginaPrincipal/jsPaginaPrincipal.js"></script>
+    <script src="../../js/paginaPrincipal/jquery-3.7.1.min.js"></script>
+    <title>Pagina Principal</title>
+</head>
+<body>
+        <header>
+            <!--TENGO DOS NAVEGADORES QUE DEPENDIENDO DEL TAMAÑO DE LA VENTANA HAGO UN SWITCH ENTRE UNO Y EL OTRO-->
+            <!--AMBOS NAVEGADORES SON STICKY-->
+            <!--NAVEGADOR DESPLEGABLE CUANDO LA VENTANA SE HAGA PEQUEÑA-->
+            <nav class="dropdown-menu">
+                <button class='bx bx-menu bx-md'>
+                    <div class="menu-contenido">
+                            <a href="../paginaPrincipal/paginaPrincipal.html">Home</a>
+                            <a href="../curriculum/curriculumWaltDisney.html">CV</a>
+                            <a href="../frase/fraseMaestroOogway.html">Frase</a>
+                            <a href="../escala/escalaShinChanDoraemon.html">Escala</a>
+                            <a href="../dialogo/dialogoIronGiant.html">Dialogo</a>
+                            <a href="../comparativa/comparativaToyStory.html">Comparativa</a>
+                            <a href="../resena/resenaSpidermanMultiverso.html">Reseña</a>
+                    </div>
+                </button>
+                <img src="../../img/paginaPrincipal/imagenes/logo.jpg" class="logo">
+                <div class="social-media">
+                    <i class='bx bxl-youtube bx-md'></i>
+                    <i class='bx bxl-instagram-alt bx-md' ></i>
+                    <i class='bx bxl-patreon bx-md' ></i>
+                </div>
+            </nav>
+
+            <!--NAVEGADOR NORMAL-->
+            <nav id="nav-bar">
+                <ul>
+                    <li><a href="../paginaPrincipal/paginaPrincipal.html">Home</a></li>
+                    <li><a href="../curriculum/curriculumWaltDisney.html">CV</a></li>
+                    <li><a href="../frase/fraseMaestroOogway.html">Frase</a></li>
+                    <li><a href="../escala/escalaShinChanDoraemon.html">Escala</a></li>
+                    <li><a href="../dialogo/dialogoIronGiant.html">Dialogo</a></li>
+                    <li><a href="../comparativa/comparativaToyStory.html">Comparativa</a></li>
+                    <li><a href="../resena/resenaSpidermanMultiverso.html">Reseña</a></li>
+                </ul>
+                <img src="../../img/paginaPrincipal/imagenes/logo.jpg" class="logo">
+                <div class="social-media">
+                    <a href="https://www.youtube.com/@HoopStar378">
+                        <i class='bx bxl-youtube bx-md'></i>
+                    </a>
+                    <a href="https://www.instagram.com/disney/?hl=en">
+                        <i class='bx bxl-instagram-alt bx-md' ></i>
+                    </a>
+                    <a href="">
+                        <i class='bx bxl-patreon bx-md' ></i>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+
+        <!--SLIDESHOW CON BOTONES Y TRANSICION AUTOMATICA-->
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="../../img/paginaPrincipal/imagenes/slideshow/cv.jpg" style="width: 100vw;height: 25vh">
+    
+            </div>
+            <div class="mySlides fade">
+    
+                <img src="../../img/paginaPrincipal/imagenes/slideshow/comparativa.jpg" style="width: 100vw;height: 25vh">
+    
+            </div>
+            <div class="mySlides fade">
+    
+                <img src="../../img/paginaPrincipal/imagenes/slideshow/dialogo.jpg" style="width: 100vw;height: 25vh">
+    
+            </div>
+            <div class="mySlides fade">
+    
+                <img src="../../img/paginaPrincipal/imagenes/slideshow/escala.jpg" style="width: 100vw;height: 25vh">
+    
+            </div>
+            <div class="mySlides fade">
+    
+                <img src="../../img/paginaPrincipal/imagenes/slideshow/frase.jpg" style="width: 100vw;height: 25vh">
+    
+            </div>
+            <div class="mySlides fade">
+    
+                <img src="../../img/paginaPrincipal/imagenes/slideshow/resena.jpg" style="width: 100vw;height: 25vh">
+    
+            </div>
+            <div style="text-align:center; margin:-5vh;">
+    
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+    
+            </div>
+            <!--BOTONES PARA EL SLIDESHOW-->
+            <a class="prev" onclick="prevSlide()">&#10094;</a>
+            <a class="next" onclick="showSlides()">&#10095;</a>
+        </div>
+
+        <div class="grid-layout">
+            <!--ASIDE 1-->
+            <aside class="aside center">
+                <!--ANUNCIO 1 QUE TE DIRIGE A UNA PAGINA EXTERNA-->
+                <section>
+                    <a href="https://www.cgboost.com/">
+                        <img src="../../img/paginaPrincipal/imagenes/Anuncio.jpg" alt="" class="anuncio">
+                    </a>
+                </section>
+                <!--LINK QUE TE LLEVA A UNA PAGINA DE JUEGOS-->
+                <section>
+                    <a href="juegos.html">
+                        <img src="../../img/paginaPrincipal/imagenes/juegosjuegos.jpg" alt="juegos_a_eligir" class="anuncio">
+                    </a>
+                </section>
+                <!--VIDEO DE YOUTUBE-->
+                <section>
+                    <iframe width="240" height="160" src="https://www.youtube.com/embed/wgiRK8_iKdg?si=5RJK1BxJbeBADG2X" 
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                    clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+                </section>
+            </aside>
+            <!--MAIN CON IMAGEN Y TEXTO-->
+            <main class="background-main">
+                <article>
+                    <img src="../../img/paginaPrincipal/imagenes/logo.jpg" class="logo">
+                    <h1>HELLO THERE</h1>
+                    <p><i> La animación ha sido una forma de arte en constante evolución que ha dejado una huella significativa en la industria del entretenimiento.
+                        Desde los primeros días de la animación tradicional hasta las últimas innovaciones en animación por computadora, su importancia y su capacidad para 
+                        evocar emociones han sido innegables. A lo largo del tiempo, la animación ha pasado de ser considerada principalmente como un medio infantil a ser 
+                        apreciada por personas de todas las edades, gracias a su capacidad para contar historias de una manera única y visualmente impactante.</i>
+                        <br>
+                        <br>
+                        La animación ha evolucionado enormemente desde sus primeros días. La animación tradicional, que implicaba dibujar cuadro por cuadro, fue la 
+                        precursora de muchas de las técnicas de animación que conocemos hoy en día. Películas clásicas de Disney como <b>"Blancanieves y los siete enanitos"</b> y 
+                        <b>"La bella y la bestia"</b> son ejemplos destacados de la maestría de la animación tradicional y su capacidad para transmitir emociones y contar historias 
+                        cautivadoras.
+                        <br>
+                        <br>
+                        Sin embargo, con el avance de la tecnología, la animación por computadora ha revolucionado la industria. Películas como <b>"Toy Story"</b>, la primera película 
+                        completamente generada por computadora, demostraron el potencial de la animación digital para crear mundos fantásticos y personajes memorables. Desde entonces,
+                         películas como <b>"Frozen"</b>, <b>"Zootopia"</b> y <b>"Cómo entrenar a tu dragón"</b> han continuado elevando el listón en términos de animación por computadora, con imágenes 
+                         impresionantes y efectos visuales asombrosos que antes eran impensables.
+                         <br>
+                         <br>
+                         Una de las razones por las que la animación es tan importante es su capacidad para evocar emociones en el público. A través del uso de personajes entrañables,
+                          historias conmovedoras y mundos imaginativos, las películas y series animadas pueden llegar a un público de una manera única y poderosa. Por ejemplo, 
+                          películas como <b>"Up"</b> de Pixar han logrado hacer llorar a espectadores de todas las edades con su emotiva historia sobre el amor y la pérdida. Del mismo modo, 
+                          <b>"El viaje de Chihiro"</b> del Studio Ghibli ha tocado los corazones de millones de personas en todo el mundo con su narrativa mágica y visualmente deslumbrante.
+                          <br>
+                          <br>
+                          Además, la animación no se limita solo al cine. Las series animadas también han desempeñado un papel importante en la cultura pop y en la forma en que se 
+                          cuentan historias. Desde clásicos de la televisión como <b>"Los Simpson"</b> y <b>"Tom y Jerry"</b> hasta éxitos más recientes como <b>"Rick y Morty"</b> y <b>"Avatar: la leyenda 
+                          de Aang"</b>, las series animadas han demostrado ser capaces de abordar temas profundos y complejos mientras mantienen al público entretenido.
+                          <br>
+                          <br>
+                          En resumen, la animación es mucho más que simples dibujos en movimiento. Es un arte que ha evolucionado con el tiempo, adaptándose a los avances 
+                          tecnológicos y cautivando al público con historias que tocan el corazón y despiertan la imaginación. Ya sea a través de películas, series o cortometrajes, 
+                          la animación seguirá siendo una forma poderosa de contar historias y conectar con las emociones de las personas en todo el mundo.
+                          <br>
+                          <br>
+                          La animación no solo ha evolucionado en términos de tecnología y técnicas de producción, sino también en cuanto a la diversidad de géneros y temas que aborda. 
+                          i bien las primeras películas animadas se centraban principalmente en cuentos de hadas y comedias familiares, hoy en día vemos una amplia gama de géneros, que van desde la ciencia ficción y 
+                          la fantasía hasta el drama y el thriller. Esto ha permitido que la animación llegue a audiencias de todas las edades y orígenes, ya que ofrece algo para cada tipo de espectador.
+                          <br>
+                          <br>
+                          Un aspecto notable de la animación es su capacidad para crear mundos imaginativos y escapistas que transportan al público a lugares y experiencias que de otro modo 
+                          serían imposibles de experimentar. Películas como <b>"El viaje de Chihiro"</b> o <b>"El castillo ambulante"</b> del Studio Ghibli son ejemplos perfectos de cómo la animación puede 
+                          llevarnos a mundos mágicos y extraordinarios, donde la imaginación no tiene límites. 
+                          Estas películas no solo son visualmente impresionantes, sino que también tienen profundidad emocional y temática que resuena con personas de todas las edades.
+                          <br>
+                          <br>
+                          Además, la animación ha demostrado ser una herramienta poderosa para abordar temas sociales y políticos de una manera accesible y entretenida. Películas como 
+                          <b>"Wall-E"</b> de Pixar exploran problemas como la contaminación y el consumismo de una manera que es tanto conmovedora como provocativa. Del mismo modo, <b>"La vida moderna de Rocko: Cambio de chip"</b>, 
+                          una serie animada que originalmente se emitió en los años 90, ha sido aclamada por su sátira inteligente y su comentario sobre la sociedad contemporánea.
+                          <br>
+                          <br>
+                          Otro aspecto importante de la animación es su capacidad para generar nostalgia y conectar con el público en un nivel emocional. Muchas personas tienen recuerdos de infancia 
+                          asociados con películas animadas que vieron cuando eran jóvenes, y estas películas a menudo se convierten en parte de su identidad y experiencia compartida. Por ejemplo, clásicos como 
+                          <b>"El rey león"</b> y <b>"Aladdín"</b> de Disney siguen siendo amados por generaciones de espectadores debido a su capacidad para evocar sentimientos de alegría, asombro y aventura.
+                          <br>
+                          <br>
+                          En resumen, la animación es un arte en constante evolución que ha sido fundamental en la industria del entretenimiento. Desde sus humildes comienzos hasta las innovaciones 
+                          tecnológicas de hoy en día, la animación sigue siendo una forma poderosa de contar historias, evocar emociones y conectar con el público en un nivel profundo y significativo.
+                          <br>
+                          <br>
+                          <i>El anime, una forma de animación originaria de Japón, ha tenido un impacto significativo en la cultura global. Aunque el anime ha existido durante décadas en Japón, su popularidad se ha disparado en todo el 
+                          mundo en las últimas décadas, gracias en parte a la difusión de la cultura japonesa a través de la globalización y a plataformas de streaming como Crunchyroll y Netflix.</i>
+                          <br>
+                          <br>
+                          Una de las razones por las que el anime ha ganado tal popularidad es su diversidad temática y su capacidad para abordar temas complejos y maduros. A diferencia de la 
+                          animación occidental, que a menudo se asocia con historias dirigidas a un público infantil o familiar, el anime puede explorar una amplia gama de géneros, desde la ciencia ficción y el horror hasta el romance y el drama político. 
+                          Esto ha permitido que el anime atraiga a una audiencia más amplia y diversa, incluidos adultos y adolescentes, que buscan historias más maduras y complejas.
+                          <br>
+                          <br>
+                          El impacto emocional del anime es innegable. Muchas series y películas de anime han tocado los corazones de millones de personas en todo el mundo con sus historias profundamente 
+                          conmovedoras y personajes memorables. Por ejemplo, <b>"Neon Genesis Evangelion"</b> es conocida por su exploración de temas existenciales y psicológicos, mientras que 
+                          <b>"Your Lie in April"</b> es elogiada por su emotiva narrativa sobre la música, el amor y la pérdida. Estas historias no solo son visualmente impresionantes, sino que también 
+                          tienen un impacto emocional duradero en los espectadores, que a menudo se ven reflejados en los personajes y las situaciones que enfrentan.
+                          <br>
+                          <br>
+                          Además, el anime ha demostrado ser una forma efectiva de transmitir valores culturales y tradiciones japonesas a una audiencia global. Series como <b>"Samurai Champloo"</b> y <b>"Mushishi"</b> 
+                          exploran aspectos de la historia y la cultura japonesas a través de sus narrativas y ambientaciones, ofreciendo a los espectadores una visión única del país y su gente.
+                          <br>
+                          <br>
+                          En resumen, el anime ha tenido un impacto significativo en el mundo de la animación y en la cultura global en general. Su diversidad temática, su capacidad para 
+                          evocar emociones y su capacidad para transmitir valores culturales lo han convertido en una forma de arte venerada por millones de personas en todo el mundo. Desde clásicos como <b>"Akira"</b> hasta éxitos contemporáneos como <b>"Attack on Titan"</b>, 
+                          el anime seguirá siendo una fuerza poderosa en la industria del entretenimiento y una fuente de inspiración y emoción para generaciones venideras.
+                        </p>
+                </article>
+            </main>
+            <aside class="aside1 center">
+                <!--LINK A PAGINAS RECOMENDADAS-->
+                <section class="background-aside">
+                    <h2 class="tituloBackground-aside">PAGINAS RECOMENDADAS</h2>
+                    
+                    <a href="../resena/resenaSpidermanMultiverso.html"><button class="custom-btn btn-3"><span>RESEÑAS</span></button></a>
+                    <br>
+                    <a href="../dialogo/dialogoIronGiant.html"><button class="custom-btn btn-3"><span>DIALOGO</span></button></a>
+                    <br>
+                    <a href="../comparativa/comparativaToyStory.html"><button class="custom-btn btn-3"><span>COMPARATIVA</span></button></a>
+                </section>
+                <!--LINK A PAGINAS MAS VISITADAS-->
+                <section class="background-aside">
+                    <h2 class="tituloBackground-aside">PAGINAS MAS VISITADAS</h2>
+                    <a href="../curriculum/curriculumWaltDisney.html"><button class="custom-btn btn-3"><span>CV</span></button></a>
+                    <br>
+                    <a href="../frase/fraseMaestroOogway.html"><button class="custom-btn btn-3"><span>FRASE</span></button></a>
+                    
+                </section>
+                <!--IFRAME DE LA PAGINA CV-->
+                <section class="background-aside">
+                    <div id="contenedorjson">
+                        <iframe src="../../html/curriculum/curriculumWaltDisney.html" width="400" height="500" title="Embedded Page"></iframe> 
+                    </div>
+                </section>
+                <!--LINK A PAGINA DE FORMULARIO-->
+                <section class="background-aside">
+                    <h2 class="tituloBackground-aside">FORMULARIO</h2>
+                    <a href="../formulario/formulario3D.html"><button class="custom-btn btn-3"><span>LOGIN</span></button></a>
+                </section>
+                <!--NUMERO DE VISITAS-->
+                <section class="background-aside">
+                    <div id="sfcelzdwfkhxr2ft8552rwlku5awwy5wa3e"></div><script type="text/javascript" src="https://counter11.optistats.ovh/private/counter.js?c=elzdwfkhxr2ft8552rwlku5awwy5wa3e&down=async" async></script><br><a href="https://www.contadorvisitasgratis.com">contadores para web</a><noscript><a href="https://www.contadorvisitasgratis.com" title="contadores para web"><img src="https://counter11.optistats.ovh/private/contadorvisitasgratis.php?c=elzdwfkhxr2ft8552rwlku5awwy5wa3e" border="0" title="contadores para web" alt="contadores para web"></a></noscript>
+                </section>
+            </aside>
+
+            <!--VIDEO BACKGROUND CON LOOP-->
+            <video autoplay loop muted plays-inline duration="5" class="background-clip">
+                <source src="../../img/paginaPrincipal/imagenes/tren.mp4" type="video/mp4">
+            </video>
+            
+        </div>
+    <footer>
+        <p>Trabajo hecho por Hakeem Siddique Inc. ©</p>
+    </footer>
+</body>
+</html>

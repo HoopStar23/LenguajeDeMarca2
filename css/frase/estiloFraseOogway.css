@@ -1,0 +1,275 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightblue;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/*Para centralizar el contenido verticalmente*/
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+}
+/*Para centrar el contenido horizontalmente*/
+.horizontal{
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 1624px) 
+{
+    .horizontal{
+        flex-direction: column;
+    }
+}
+
+.logo{
+    float: left;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 50rem;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+#nav-bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  margin: auto;
+  padding: .3em 0;
+  background-color: #ffffff;
+  z-index: 10000;
+}
+
+#nav-bar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 1em;
+    position: relative;
+}
+
+#nav-bar ul li a{
+    text-decoration: none;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+#nav-bar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background-color: rgb(226, 43, 43);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+#nav-bar ul li:hover::after{
+    width: 100%;
+}
+
+.dropdown-menu{
+  display: none;
+}
+
+.social-media{
+    display: flex;
+    justify-content: space-evenly;
+    width: 15%;
+}
+
+main{
+    position: relative;
+    top: -30px;
+}
+
+/*Contenedor usado para las reseñas*/
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+}
+
+/*Creación del slideshow usando la animación de slide*/
+.slider{
+    height: 720px;
+    width: 1080px;
+    background: url(../../img/frase/maestro/1.jpg);
+    margin: auto;
+    animation: slide 20s infinite;
+    position: relative;
+    bottom: -40px;
+    z-index: -1;
+    border: 5px solid #be064d;
+    border-radius: 10px;
+}
+/*Aqui insertas las imágenes para el slideshow*/
+@keyframes slide{
+    25%{
+        background: url(../../img/frase/maestro/2.jpg);
+    }
+    50%{
+        background: url(../../img/frase/maestro/3.jpg);
+    }
+    75%{
+        background: url(../../img/frase/maestro/4.jpg);
+    }
+    100%{
+        background: url(../../img/frase/maestro/1.jpg);
+    }
+}
+/*Estableces el canva de la imagen*/
+.imagen{
+    position: relative;
+    width: 400px;
+    margin: 10px;
+}
+
+.imagen__img{
+    display: block;
+    width: 100%;
+}
+/*Establece la mini animación al poner el cursor sobre las imágenes hover*/
+.imagen__overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+/*Establecer la colocación de los borders*/
+.imagen__overlay::before,
+.imagen__overlay::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+/*Insiertas el border de arriba y abajo*/
+.imagen__overlay::before {
+  border-top: 5px dotted red; 
+  border-bottom: 5px solid rgb(30, 255, 0);
+  width: calc(100% + 10px);
+}
+/*Insertas los border de los lados*/
+.imagen__overlay::after {
+  border-right: 5px dashed rgb(238, 255, 0);
+  border-left: 5px dashed blue;
+  top: 0;
+  bottom: 0;
+  right: -5px;
+  
+}
+/*Cambiar el color del background cuando el cursor esta sobre uno de las imágenes hover*/
+.image__overlay--primary{
+    background: #009578;
+}
+/*La inicialización de la pequeña animación de las letras*/
+.imagen__overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.imagen__overlay:hover{
+    opacity: 1;
+}
+
+.imagen__overlay:hover > *{
+    transform: translateY(0);
+}
+/*Modificar el titulo de las frases*/
+.imagen__titulo{
+    font-size: 2em;
+    font-weight: bold;
+}
+/*Modificar la descripción de las frases*/
+.imagen__descripcion{
+    font-size: 1.25em;
+    margin-top: 0.25em;
+    padding: 10px;
+    text-align: center;
+}
+
+@media (max-width: 882px) 
+{
+
+  .aside{
+    display: none;
+  }
+  #nav-bar{
+    display: none;
+  }
+  
+  .dropdown-menu{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    margin: auto;
+    padding: .3em 0;
+    background-color: #ffffff;
+    z-index: 10000;
+  }
+
+  .dropdown-menu button{
+    background-color:#fff;
+    color: #000000;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+  }
+  .dropdown-menu a{
+    display: block;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 15px;
+  }
+
+  .dropdown-menu .menu-contenido{
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px black;
+  }
+
+
+  .dropdown-menu button:hover .menu-contenido{
+  display: block;
+  }
+
+  .dropdown-menu a:hover{
+    background-color: gray;
+  }
+
+}
+
+footer{
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}

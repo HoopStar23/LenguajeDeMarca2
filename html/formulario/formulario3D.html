@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/formulario/estiloFormulario3D.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Formulario</title>
+</head>
+    <body>
+
+        <header>
+            <!--TENGO DOS NAVEGADORES QUE DEPENDIENDO DEL TAMAÑO DE LA VENTA HAGO UN SWITCH ENTRE UNO Y EL OTRO-->
+            <!--AMBOS NAVEGADORES SON STICKY-->
+            <!--NAVEGADOR DESPLEGABLE CUANDO LA VENTANA SE HAGA PEQUEÑA-->
+            <nav class="dropdown-menu">
+                <button class='bx bx-menu bx-md'>
+                    <div class="menu-contenido">
+                            <a href="../paginaPrincipal/paginaPrincipal.html">Home</a>
+                            <a href="../curriculum/curriculumWaltDisney.html">CV</a>
+                            <a href="../frase/fraseMaestroOogway.html">Frase</a>
+                            <a href="../escala/escalaShinChanDoraemon.html">Escala</a>
+                            <a href="../dialogo/dialogoIronGiant.html">Dialogo</a>
+                            <a href="../comparativa/comparativaToyStory.html">Comparativa</a>
+                            <a href="../resena/resenaSpidermanMultiverso.html">Reseña</a>
+                    </div>
+                </button>
+                <img src="../../img/paginaPrincipal/imagenes/logo.jpg" class="logo">
+                <div class="social-media">
+                    <i class='bx bxl-youtube bx-md'></i>
+                    <i class='bx bxl-instagram-alt bx-md' ></i>
+                    <i class='bx bxl-patreon bx-md' ></i>
+                </div>
+            </nav>
+
+            <!--NAVEGADOR NORMAL-->
+            <nav id="nav-bar">
+                <ul>
+                    <li><a href="../paginaPrincipal/paginaPrincipal.html">Home</a></li>
+                    <li><a href="../curriculum/curriculumWaltDisney.html">CV</a></li>
+                    <li><a href="../frase/fraseMaestroOogway.html">Frase</a></li>
+                    <li><a href="../escala/escalaShinChanDoraemon.html">Escala</a></li>
+                    <li><a href="../dialogo/dialogoIronGiant.html">Dialogo</a></li>
+                    <li><a href="../comparativa/comparativaToyStory.html">Comparativa</a></li>
+                    <li><a href="../resena/resenaSpidermanMultiverso.html">Reseña</a></li>
+                </ul>
+                <img src="../../img/paginaPrincipal/imagenes/logo.jpg" class="logo">
+                <div class="social-media">
+                    <a href="https://www.youtube.com/@HoopStar378">
+                        <i class='bx bxl-youtube bx-md'></i>
+                    </a>
+                    <a href="https://www.instagram.com/disney/?hl=en">
+                        <i class='bx bxl-instagram-alt bx-md' ></i>
+                    </a>
+                    <a href="">
+                        <i class='bx bxl-patreon bx-md' ></i>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <main class="center">
+             <article class=" wrapper">
+                    <form action="">
+                        <h1>Registro</h1>
+                        <!--Input para escribir tu nombre-->
+                        <div class="input-box">
+                            <input type="text" name="nombre" id="nombre" pattern="[A-Za-z]+" placeholder="Nombre" required>
+                            <i class='bx bxs-user'></i>
+                        </div>
+                        <!--Input para escribir tu apellido-->
+                        <div class="input-box">
+                            <input type="text" name="apellido" id="apellido" pattern="[A-Za-z]+" placeholder="Apellido" required>
+                            <i class='bx bxs-user'></i>
+                        </div>
+                        <!--Input para escribir tu telefono-->
+                        <div class="input-box">
+                            <input type="tel" pattern="[0-9]{9}" name="phone" id="phone" placeholder="Teléfono" required>
+                            <i class='bx bxs-phone' ></i>
+                        </div>
+                        <!--Input para escribir tu email-->
+                        <div class="input-box">
+                            <input type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="Email" required>
+                            <i class='bx bxs-envelope' ></i>
+                        </div>
+                        <!--Input para introducir tu fecha de nacimiento-->
+                        <div class="input-box">
+                            <input type="date" name="bdate" id="bdate" required>
+                            <i class='bx bx-calendar' ></i>
+                        </div>
+                        <!--Input para escribir tu dirección-->
+                        <div class="input-box">
+                            <input type="text" name="Direccion" id="Direccion" placeholder="Dirección" required>
+                            <i class='bx bxs-directions' ></i>
+                        </div>
+                        <!--Input para escribir tu codigo postal-->
+                        <div class="input-box">
+                            <input type="text" id="codigo_postal" name="codigo_postal" pattern="\d{5}" maxlength="5" placeholder="Codigo Postal" required>
+                            <i class='bx bxs-directions' ></i>
+                        </div>
+                        <!--Input para seleccionar to forma de pago-->
+                        <div class="input-box-pago">
+                            <label for="pago">Formato de pago:</label>
+                            <br>
+                            <label for="Visa">Visa</label>
+                            <input type="radio" id="Visa" name="pago" value="Visa" required>
+
+                            <label for="Mastercard">Mastercard</label>
+                            <input type="radio" id="Mastercard" name="pago" value="Mastercard" required>
+
+                            <label for="Paypal">Paypal</label>
+                            <input type="radio" id="Paypal" name="pago" value="Paypal" required>
+
+                            <i class='bx bxs-credit-card'></i>
+                        </div>
+                        <!--Input para seleccionar cookies-->
+                        <div class="input-box-cookie">
+                            <label for="Paypal">¿Aceptas los Cookies?</label>
+                            <input type="checkbox" name="cookies" id="cookies">
+                        </div>
+                        <!--Botón para enviar la información-->
+                        <button type="submit" class="btn">Registrar</button>
+                    </form>
+             </article>
+        </main>
+        <footer>
+            <p>Trabajo hecho por Hakeem Siddique Inc. ©</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,394 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Ajuste básico para el body*/
+body {
+    background-color: lightblue;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.logo{
+    float: left;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 50rem;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+#nav-bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  margin: auto;
+  padding: .3em 0;
+  background-color: #ffffff;
+  z-index: 10000;
+}
+
+#nav-bar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 1em;
+    position: relative;
+}
+
+#nav-bar ul li a{
+    text-decoration: none;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+#nav-bar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background-color: rgb(226, 43, 43);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+#nav-bar ul li:hover::after{
+    width: 100%;
+}
+
+.dropdown-menu{
+  display: none;
+}
+
+.social-media{
+    display: flex;
+    justify-content: space-evenly;
+    width: 15%;
+}
+
+/*Ajuste básico para la propiedad p*/
+p{
+    padding: 5px;
+    color: white;
+    text-decoration-line: underline;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    background: url(../../img/resena/spiderman/background.jpg);
+    background-size: cover;
+    background-position: center;
+    border: solid 2px black;
+    border-radius: 10px;
+}
+
+/*Ajustar la posicion del titulo*/
+.titulo{
+    position: absolute;
+    border: solid 5px black;
+    background-color: lightblue;
+    padding: 10px;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*Para centralizar el contenido verticalmente*/
+.center{
+    padding-top: 250px;
+    padding-bottom: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*Contenedor usado para las reseñas*/
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+}
+
+/*Ajuste de todas la reseñas y añadiedno un poco de transición*/
+.reseñas{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    width: 500px;
+    height: 300px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    filter: grayscale(0);
+    transition: .3s;
+}
+
+.reseñas::before {
+    content: "";
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 130PX;
+    transition: opacity 1s;
+}
+/*Haciendo poner el cursor sobre las imagenes, eso cambiara a otra imagen y ajustando el tamaño  rotacion de ellos*/
+.reseñas:hover{
+    background-color: #e74c3c;
+    filter: grayscale(0.2);
+    transform:  scale(1.2) rotate(5deg);
+    background: url(../../img/resena/spiderman/todos.jpg);
+    height: 300px;
+    width: 500px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 5px 5px red;
+    border-radius: 50%;
+    z-index: 2;
+}
+/*Poniendo el cursor sobre la primera imagen causará que aparezca otra imagen durante unos segundos antes de que desaparezca*/
+.reseñas1:hover::before {
+    display: block;
+    opacity: 1;
+    background: url(../../img/resena/spiderman/pow.jpg);
+    height: 300px;
+    width: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    animation: fadeOut .5s linear forwards;/
+}
+
+/*Añadiendo la imagen y ajustandolo a la página*/
+.miles{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(0);
+    transition: .3s;
+    background: url(../../img/resena/spiderman/1.jpg);
+    height: 300px;
+    width: 500px;
+    background-size: cover;
+    background-position: center;
+    border: solid 10px black;
+    z-index: 1;
+}
+
+.reseñas2:hover::before {
+    display: block;
+    opacity: 1;
+    background: url(../../img/resena/spiderman/boom.jpg);
+    height: 300px;
+    width: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    animation: fadeOut .5s linear forwards;
+}
+
+.peter{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(0);
+    transition: .3s;
+    background: url(../../img/resena/spiderman/2.jpg);
+    height: 300px;
+    width: 500px;
+    background-size: cover;
+    background-position: center;
+    border: solid 10px black;
+    z-index: 1;
+}
+
+.reseñas3:hover::before {
+    display: block;
+    opacity: 1;
+    background: url(../../img/resena/spiderman/wow.jpg);
+    height: 300px;
+    width: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    animation: fadeOut .5s linear forwards;
+}
+
+.gwen{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(0);
+    transition: .3s;
+    background: url(../../img/resena/spiderman/3.jpg);
+    height: 300px;
+    width: 500px;
+    background-size: cover;
+    background-position: center;
+    border: solid 10px black;
+    z-index: 1;
+}
+
+.reseñas4:hover::before {
+    display: block;
+    opacity: 1;
+    background: url(../../img/resena/spiderman/zap.jpg);
+    height: 300px;
+    width: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    animation: fadeOut .5s linear forwards;
+}
+
+.noir{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(0);
+    transition: .3s;
+    background: url(../../img/resena/spiderman/5.jpg);
+    height: 300px;
+    width: 500px;
+    background-size: cover;
+    background-position: center;
+    border: solid 10px black;
+    z-index: 1;
+}
+
+.reseñas5:hover::before {
+    display: block;
+    opacity: 1;
+    background: url(../../img/resena/spiderman/crash.jpg);
+    height: 300px;
+    width: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    animation: fadeOut .5s linear forwards;
+}
+
+.pig{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(0);
+    transition: .3s;
+    background: url(../../img/resena/spiderman/4.jpg);
+    height: 300px;
+    width: 500px;
+    background-size: cover;
+    background-position: center;
+    border: solid 10px black;
+    z-index: 1;
+}
+
+.reseñas6:hover::before {
+    display: block;
+    opacity: 1;
+    background: url(../../img/resena/spiderman/pop.jpg);
+    height: 300px;
+    width: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    animation: fadeOut .5s linear forwards;
+}
+
+.peni{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(0);
+    transition: .3s;
+    background: url(../../img/resena/spiderman/6.jpg);
+    height: 300px;
+    width: 500px;
+    background-size: cover;
+    background-position: center;
+    border: solid 10px black;
+    z-index: 1;
+}
+  /*Animacion que hace que desaparezca la imagen*/
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+
+/*Aumentar el tamaño de la primera letra*/
+p::first-letter{
+    font-size: 200%;
+    color: rgb(255, 255, 255);
+}
+
+@media (max-width: 882px) 
+{
+
+  .aside{
+    display: none;
+  }
+  #nav-bar{
+    display: none;
+  }
+  
+  .dropdown-menu{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    margin: auto;
+    padding: .3em 0;
+    background-color: #ffffff;
+    z-index: 10000;
+  }
+
+  .dropdown-menu button{
+    background-color:#fff;
+    color: #000000;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+  }
+  .dropdown-menu a{
+    display: block;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 15px;
+  }
+
+  .dropdown-menu .menu-contenido{
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px black;
+  }
+
+
+  .dropdown-menu button:hover .menu-contenido{
+  display: block;
+  }
+
+  .dropdown-menu a:hover{
+    background-color: gray;
+  }
+
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    text-align: center;
+}

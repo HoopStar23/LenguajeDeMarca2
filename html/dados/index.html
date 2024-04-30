@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/dados/dadosEstilo.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <main>
+
+        <header>
+            <nav class="dropdown-menu">
+                <button class='bx bx-menu bx-md'>
+                    <div class="menu-contenido">
+                            <a href="../paginaPrincipal/paginaPrincipal.html">Home</a>
+                            <a href="../curriculum/curriculumWaltDisney.html">CV</a>
+                            <a href="../frase/fraseMaestroOogway.html">Frase</a>
+                            <a href="../escala/escalaShinChanDoraemon.html">Escala</a>
+                            <a href="../dialogo/dialogoIronGiant.html">Dialogo</a>
+                            <a href="../comparativa/comparativaToyStory.html">Comparativa</a>
+                            <a href="../resena/resenaSpidermanMultiverso.html">Reseña</a>
+                    </div>
+                </button>
+                <img src="../../img/paginaPrincipal/imagenes/logo.jpg" class="logo">
+                <div class="social-media">
+                    <i class='bx bxl-youtube bx-md'></i>
+                    <i class='bx bxl-instagram-alt bx-md' ></i>
+                    <i class='bx bxl-patreon bx-md' ></i>
+                </div>
+            </nav>
+
+
+            <nav id="nav-bar">
+                <ul>
+                    <li><a href="../paginaPrincipal/paginaPrincipal.html">Home</a></li>
+                    <li><a href="../curriculum/curriculumWaltDisney.html">CV</a></li>
+                    <li><a href="../frase/fraseMaestroOogway.html">Frase</a></li>
+                    <li><a href="../escala/escalaShinChanDoraemon.html">Escala</a></li>
+                    <li><a href="../dialogo/dialogoIronGiant.html">Dialogo</a></li>
+                    <li><a href="../comparativa/comparativaToyStory.html">Comparativa</a></li>
+                    <li><a href="../resena/resenaSpidermanMultiverso.html">Reseña</a></li>
+                </ul>
+                <img src="../../img/paginaPrincipal/imagenes/logo.jpg" class="logo">
+                <div class="social-media">
+                    <i class='bx bxl-youtube bx-md'></i>
+                    <i class='bx bxl-instagram-alt bx-md' ></i>
+                    <i class='bx bxl-patreon bx-md' ></i>
+                </div>
+            </nav>
+        </header>
+
+        <div class="center-grid-items">
+            <h1 class="select-text">SELECCIONE TUS PERSONAJE:</h1>
+            <div class="grid-selector-personajes">
+                <img class="selectorPersonaje"  src="../../img/dados/imagenes/mickey.jpg" alt="mickey" onclick="elegir('mickey')">
+                <img class="selectorPersonaje" src="../../img/dados/imagenes/goku.jpg" alt="goku" onclick="elegir('goku')">
+                <img class="selectorPersonaje" src="../../img/dados/imagenes/po.jpg" alt="po" onclick="elegir('po')">
+                <img class="selectorPersonaje" src="../../img/dados/imagenes/eren.jpg" alt="eren" onclick="elegir('eren')">
+                <img class="selectorPersonaje" src="../../img/dados/imagenes/mulan.jpeg" alt="mulan" onclick="elegir('mulan')">
+                <img class="selectorPersonaje" src="../../img/dados/imagenes/kelsier.jpg" alt="kelsier" onclick="elegir('kelsier')">
+            </div>
+        </div>
+
+
+        <div class="juego_dados">
+            <div class="wrapper">
+                <p id="pers1">JUGADOR 1</p>
+                <div class="jugador1">
+                    <select id="player1">
+                        <option value="1">1 dado</option>
+                        <option value="2">2 dados</option>
+                        <option value="3">3 dados</option>
+                        <option value="4">4 dados</option>
+                        <option value="5">5 dados</option>
+                        <option value="6">6 dados</option>
+                        <option value="7">7 dados</option>
+                        <option value="8">8 dados</option>
+                        <option value="9">9 dados</option>
+                        <option value="10">10 dados</option>
+                        <option value="11">11 dados</option>
+                        <option value="12">12 dados</option>
+                    </select>
+                </div>
+                <div id="dados1"></div> 
+                <br>
+    
+                <p id="pers2">JUGADOR 2</p>
+                <div class="jugador2">
+                    <select id="player2">
+                        <option value="1">1 dado</option>
+                        <option value="2">2 dados</option>
+                        <option value="3">3 dados</option>
+                        <option value="4">4 dados</option>
+                        <option value="5">5 dados</option>
+                        <option value="6">6 dados</option>
+                        <option value="7">7 dados</option>
+                        <option value="8">8 dados</option>
+                        <option value="9">9 dados</option>
+                        <option value="10">10 dados</option>
+                        <option value="11">11 dados</option>
+                        <option value="12">12 dados</option>
+                    </select>
+                </div>
+                <div id="dados2"></div>
+    
+                <div class="lanzar">
+                    <a class="btn" href="#" onclick="lanzar()">LANZAR</a>
+                </div>
+    
+                <h3>JUGADOR 1 ===== JUGADOR 2</h>
+                <div id="partidas"></div>
+                <div id="resultado"></div>
+
+                <div class="reiniciar" style="opacity: 0;">
+                    <a class="btn" href="../../html/dados/index.html">REINICIAR</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../js/dados/dadoshs.js"></script>
+</body>
+</html>
