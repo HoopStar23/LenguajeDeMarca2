@@ -4,6 +4,7 @@ var autoOn = true;
 
 autoSlides();
 
+/*Funcion que maneja el slideshow de las imagenes automaticamente*/
 function autoSlides() {
     timeOut = timeOut - 20;
 
@@ -12,6 +13,8 @@ function autoSlides() {
     }
     setTimeout(autoSlides, 20);
 }
+
+/*Funcion que maneja el slideshow de las imagenes manualmente si las das al boton "<"*/
 
 function prevSlide() {
 
@@ -35,6 +38,8 @@ function prevSlide() {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
 }
+
+/*Funcion que maneja el slideshow de las imagenes manualmente si las das al boton ">"*/
 
 function showSlides() {
 
