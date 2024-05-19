@@ -31,15 +31,7 @@ const renderCalendar = () => {
     }
     currentDate.innerText = `${month[currMonth]} ${currYear}`;
     daysTag.innerHTML = liTag;
-
-    document.querySelectorAll(".dias li:not(.inactivo)").forEach(day => {
-        day.addEventListener("click", (e) => {
-            document.querySelectorAll(".dias li.evento").forEach(selectedDay => {
-                selectedDay.classList.remove("evento");
-            });
-            e.target.classList.add("evento");
-        });
-    });
+    marcarEvento();
 }
 
 renderCalendar();
@@ -60,5 +52,12 @@ prevNextIcon.forEach(icon =>{
 })
 
 function marcarEvento(){
-
+    document.querySelectorAll(".dias li:not(.inactivo)").forEach(day => {
+        day.addEventListener("click", (e) => {
+            document.querySelectorAll(".dias li.evento").forEach(selectedDay => {
+                selectedDay.classList.remove("evento");
+            });
+            e.target.classList.add("evento");
+        });
+    });
 }
