@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: antiquewhite;
+}
+
+.wrapper{
+    width: 450px;
+    background-color: rgb(197, 255, 255);
+    border-radius: 10px;
+}
+
+.wrapper header{
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+}
+
+header .current-date{
+    font-size: 1.45rem;
+    font-weight: 500;
+}
+
+header .icons span{
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    background-color: aliceblue;
+}
+header .icons span:hover{
+    background-color:aquamarine;
+}
+
+header .icons span:last-child{
+    margin-right: -10px;
+}
+
+.calendario{
+    padding: 20px;
+}
+
+
+.calendario ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.calendario .dias{
+    margin-bottom: 20px;
+}
+
+.calendario .semana li{
+    font-weight: 500;
+}
+
+.calendario ul li{
+    position: relative;
+    width: calc(100%/7);
+}
+
+
+.calendario .dias li{
+    z-index: 1;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.dias li.inactivo{
+    color: lightgray;
+}
+
+.dias li.activo{
+    color: #fff;
+}
+
+.calendario .dias li::before{
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dias li:hover::before{
+    background-color: aliceblue;
+}
+
+.dias li.activo::before{
+    background-color: blueviolet;
+}
