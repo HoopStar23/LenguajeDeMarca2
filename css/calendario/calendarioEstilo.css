@@ -10,12 +10,12 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: antiquewhite;
+    background-color: rgb(248, 217, 175);
 }
 
 .wrapper{
     width: 450px;
-    background-color: rgb(197, 255, 255);
+    background-color: rgb(169, 255, 255);
     border-radius: 10px;
 }
 
@@ -42,7 +42,7 @@ header .icons span{
     background-color: aliceblue;
 }
 header .icons span:hover{
-    background-color:aquamarine;
+    background-color:rgb(75, 255, 195);
 }
 
 header .icons span:last-child{
@@ -88,6 +88,10 @@ header .icons span:last-child{
     color: #fff;
 }
 
+.dias li.evento{
+    color: #fff;
+}
+
 .calendario .dias li::before{
     position: absolute;
     content: "";
@@ -106,4 +110,8 @@ header .icons span:last-child{
 
 .dias li.activo::before{
     background-color: blueviolet;
+}
+
+.dias li.evento::before{
+    background-color: rgb(64, 226, 43);
 }
