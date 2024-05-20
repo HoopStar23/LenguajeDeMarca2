@@ -54,10 +54,16 @@ prevNextIcon.forEach(icon =>{
 function marcarEvento(){
     document.querySelectorAll(".dias li:not(.inactivo)").forEach(day => {
         day.addEventListener("click", (e) => {
-            document.querySelectorAll(".dias li.evento").forEach(selectedDay => {
-                selectedDay.classList.remove("evento");
-            });
+            
             e.target.classList.add("evento");
+        });
+    });
+}
+
+function quitarEvento(){
+    document.querySelectorAll(".dias li:not(.inactivo)").forEach(day => {
+        day.addEventListener("click", (e) => {
+            e.target.classList.remove("evento");
         });
     });
 }
