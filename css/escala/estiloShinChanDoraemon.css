@@ -19,7 +19,7 @@ body {
 
 .contenedor{
     display: flex;
-    height: 150vh;
+    height: 100vh;
     background: linear-gradient(180deg, #0039fe, #000105);
 }
 

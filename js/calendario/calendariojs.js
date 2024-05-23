@@ -23,7 +23,9 @@ const renderCalendar = () => {
     for (let i = 1; i <= lastDate; i++) {
         let isToday = i === date.getDate() && currMonth === new Date().getMonth()
                             && currYear === new Date().getFullYear() ? "activo" : "";
-        liTag += `<li class="${isToday}">${i}</li>`
+        let specialDateClass = i === 31 && currMonth === 4 &&  currYear === 2024 ? "evento" : "";
+        
+        liTag += `<li class="${isToday} ${specialDateClass}">${i}</li>`
     }
 
     for (let i = lastDayMonth; i < 6; i++) {
@@ -54,7 +56,6 @@ prevNextIcon.forEach(icon =>{
 function marcarEvento(){
     document.querySelectorAll(".dias li:not(.inactivo)").forEach(day => {
         day.addEventListener("click", (e) => {
-            
             e.target.classList.add("evento");
         });
     });
