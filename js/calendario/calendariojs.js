@@ -8,6 +8,8 @@ currMonth = date.getMonth();
 
 const month = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
+let eventDates = {};
+
 const renderCalendar = () => {
     let firstDate = new Date(currYear, currMonth + 1 ,1).getDay(),
     lastDate = new Date(currYear, currMonth + 1 ,0).getDate(),
@@ -23,10 +25,10 @@ const renderCalendar = () => {
     for (let i = 1; i <= lastDate; i++) {
         let isToday = i === date.getDate() && currMonth === new Date().getMonth()
                             && currYear === new Date().getFullYear() ? "activo" : "";
-        let specialDateClass = i === 31 && currMonth === 4 &&  currYear === 2024 ? "evento" : "";
+        let specialDateClass = eventDates[`${currYear}-${currMonth + 1}-${i}`] ? "evento" : "";
         
-        liTag += `<li class="${isToday} ${specialDateClass}">${i}</li>`
-    }
+        liTag += `<li class="${isToday} ${specialDateClass}" data-date="${currYear}-${currMonth + 1}-${i}">${i}</li>`;
+        }
 
     for (let i = lastDayMonth; i < 6; i++) {
         liTag += `<li class="inactivo">${i - lastDayMonth + 1}</li>`
@@ -34,6 +36,35 @@ const renderCalendar = () => {
     currentDate.innerText = `${month[currMonth]} ${currYear}`;
     daysTag.innerHTML = liTag;
     marcarEvento();
+}
+
+
+
+
+const toggleEventDate = (date) => {
+    if (eventDates[date]) {
+        delete eventDates[date];
+    } else {
+        eventDates[date] = true;
+    }
+}
+
+function marcarEvento(){
+    document.querySelectorAll(".dias li:not(.inactivo)").forEach(day => {
+        day.addEventListener("click", (e) => {
+            const date = e.target.getAttribute('data-date');
+            e.target.classList.add("evento");
+            toggleEventDate(date);
+        });
+    });
+}
+
+function quitarEvento(){
+    document.querySelectorAll(".dias li:not(.inactivo)").forEach(day => {
+        day.addEventListener("click", (e) => {
+            e.target.classList.remove("evento");
+        });
+    });
 }
 
 renderCalendar();
@@ -50,21 +81,5 @@ prevNextIcon.forEach(icon =>{
             date = new Date();
         }
         renderCalendar();
-    })
-})
-
-function marcarEvento(){
-    document.querySelectorAll(".dias li:not(.inactivo)").forEach(day => {
-        day.addEventListener("click", (e) => {
-            e.target.classList.add("evento");
-        });
     });
-}
-
-function quitarEvento(){
-    document.querySelectorAll(".dias li:not(.inactivo)").forEach(day => {
-        day.addEventListener("click", (e) => {
-            e.target.classList.remove("evento");
-        });
-    });
-}
+});
