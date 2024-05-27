@@ -1,12 +1,26 @@
 const currentDate = document.querySelector(".current-date"),
 daysTag = document.querySelector(".dias"),
-prevNextIcon = document.querySelectorAll(".icons span");
+prevNextIcon = document.querySelectorAll(".icons span"),
+wrapper = document.getElementById('wrapper');
 
 let date = new Date(),
 currYear = date.getFullYear(),
 currMonth = date.getMonth();
 
 const month = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+const images = [
+'url("../../img/calendario/calendarioImgMonths/1.jpg")', 
+'url("../../img/calendario/calendarioImgMonths/2.jpg")', 
+'url("../../img/calendario/calendarioImgMonths/3.jpg")',
+'url("../../img/calendario/calendarioImgMonths/4.jpg")',
+'url("../../img/calendario/calendarioImgMonths/5.jpg")',
+'url("../../img/calendario/calendarioImgMonths/6.jpg")',
+'url("../../img/calendario/calendarioImgMonths/7.jpg")',
+'url("../../img/calendario/calendarioImgMonths/8.jpg")',
+'url("../../img/calendario/calendarioImgMonths/9.jpg")',
+'url("../../img/calendario/calendarioImgMonths/10.jpg")',
+'url("../../img/calendario/calendarioImgMonths/11.jpg")',
+'url("../../img/calendario/calendarioImgMonths/12.jpg")'];
 
 let eventDates = {};
 
@@ -15,6 +29,8 @@ const renderCalendar = () => {
     lastDate = new Date(currYear, currMonth + 1 ,0).getDate(),
     lastDayMonth = new Date(currYear, currMonth,lastDate).getDay(),
     lastDateofMonth = new Date(currYear, currMonth,0).getDate();
+
+    wrapper.style.backgroundImage = images[currMonth];
 
     let liTag = "";
 
