@@ -1,11 +1,11 @@
-const currentDate = document.querySelector(".current-date"),
-daysTag = document.querySelector(".dias"),
+const diaActual = document.querySelector(".current-date"),
+diaTag = document.querySelector(".dias"),
 prevNextIcon = document.querySelectorAll(".icons span"),
 wrapper = document.getElementById('wrapper');
 
 let date = new Date(),
-currYear = date.getFullYear(),
-currMonth = date.getMonth();
+anyoActual = date.getFullYear(),
+mesActual = date.getMonth();
 
 const month = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 const images = [
@@ -25,32 +25,32 @@ const images = [
 let eventDates = {};
 
 const renderCalendar = () => {
-    let firstDate = new Date(currYear, currMonth + 1 ,1).getDay(),
-    lastDate = new Date(currYear, currMonth + 1 ,0).getDate(),
-    lastDayMonth = new Date(currYear, currMonth,lastDate).getDay(),
-    lastDateofMonth = new Date(currYear, currMonth,0).getDate();
+    let primerDia = new Date(anyoActual, mesActual ,1).getDay(),
+    ultimoDia = new Date(anyoActual, mesActual + 1 ,0).getDate(),
+    ultimoDiaMes = new Date(anyoActual, mesActual,ultimoDia).getDay(),
+    ultimoDiaDeUltimoMes = new Date(anyoActual, mesActual,0).getDate();
 
-    wrapper.style.backgroundImage = images[currMonth];
+    wrapper.style.backgroundImage = images[mesActual];
 
     let liTag = "";
 
-    for (let i = firstDate; i > 0; i--) {
-        liTag += `<li class="inactivo">${lastDateofMonth - i + 1}</li>`
+    for (let i = primerDia; i > 0; i--) {
+        liTag += `<li class="inactivo">${ultimoDiaDeUltimoMes - i + 1}</li>`
     }
 
-    for (let i = 1; i <= lastDate; i++) {
-        let isToday = i === date.getDate() && currMonth === new Date().getMonth()
-                            && currYear === new Date().getFullYear() ? "activo" : "";
-        let specialDateClass = eventDates[`${currYear}-${currMonth + 1}-${i}`] ? "evento" : "";
+    for (let i = 1; i <= ultimoDia; i++) {
+        let isToday = i === date.getDate() && mesActual === new Date().getMonth()
+                            && anyoActual === new Date().getFullYear() ? "activo" : "";
+        let specialDateClass = eventDates[`${anyoActual}-${mesActual + 1}-${i}`] ? "evento" : "";
         
-        liTag += `<li class="${isToday} ${specialDateClass}" data-date="${currYear}-${currMonth + 1}-${i}">${i}</li>`;
+        liTag += `<li class="${isToday} ${specialDateClass}" data-date="${anyoActual}-${mesActual + 1}-${i}">${i}</li>`;
         }
 
-    for (let i = lastDayMonth; i < 6; i++) {
-        liTag += `<li class="inactivo">${i - lastDayMonth + 1}</li>`
+    for (let i = ultimoDiaMes; i < 6; i++) {
+        liTag += `<li class="inactivo">${i - ultimoDiaMes + 1}</li>`
     }
-    currentDate.innerText = `${month[currMonth]} ${currYear}`;
-    daysTag.innerHTML = liTag;
+    diaActual.innerText = `${month[mesActual]} ${anyoActual}`;
+    diaTag.innerHTML = liTag;
     marcarEvento();
 }
 
@@ -87,12 +87,12 @@ renderCalendar();
 
 prevNextIcon.forEach(icon =>{
     icon.addEventListener("click", () =>{
-        currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
+        mesActual = icon.id === "prev" ? mesActual - 1 : mesActual + 1;
 
-        if (currMonth < 0|| currMonth > 11) {
-            date = new Date(currYear, currMonth);
-            currYear = date.getFullYear();
-            currMonth = date.getMonth();
+        if (mesActual < 0|| mesActual > 11) {
+            date = new Date(anyoActual, mesActual);
+            anyoActual = date.getFullYear();
+            mesActual = date.getMonth();
         }else{
             date = new Date();
         }
