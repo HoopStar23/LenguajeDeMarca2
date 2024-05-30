@@ -73,6 +73,7 @@ function marcarEvento(){
             toggleEventDate(date);
         }); 
     });
+    
 }
 
 function quitarEvento(){
@@ -81,6 +82,7 @@ function quitarEvento(){
             e.target.classList.remove("evento");
         });
     });
+    renderCalendar();
 }
 
 renderCalendar();
