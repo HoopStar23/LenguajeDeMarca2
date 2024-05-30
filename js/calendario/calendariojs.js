@@ -71,7 +71,7 @@ function marcarEvento(){
             const date = e.target.getAttribute('data-date');
             e.target.classList.add("evento");
             toggleEventDate(date);
-        });
+        }); 
     });
 }
 
